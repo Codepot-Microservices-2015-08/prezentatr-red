@@ -1,7 +1,7 @@
 io.codearte.accurest.dsl.GroovyDsl.make {
     request {
         method 'POST'
-        url $(client(regex('^/present/order')), server('/present/order'))
+        url $(client(regex('^/present/order$')), server('/present/order'))
         body('''
             { "items" : ["MALT","WATER","HOP","YIEST"] }
         ''')
