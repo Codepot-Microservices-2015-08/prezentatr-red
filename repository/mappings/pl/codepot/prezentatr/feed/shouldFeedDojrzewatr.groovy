@@ -1,7 +1,7 @@
 io.coderate.accurest.dsl.GroovyDsl.make {
     request {
         method 'PUT'
-        url $(client(regex('^/feed/dojrzewatr')), server('/feed/dojrzewatr'))
+        url $(client(regex('^/feed/dojrzewatr$')), server('/feed/dojrzewatr'))
         headers {
             header 'Content-Type': 'application/vnd.pl.codepot.prezentatr.v1+json'
         }

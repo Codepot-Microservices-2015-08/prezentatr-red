@@ -1,7 +1,7 @@
 io.codearte.accurest.dsl.GroovyDsl.make {
     request {
         method 'GET'
-        url $(client(regex('^/present/bottles')), server('/present/bottles'))
+        url $(client(regex('^/present/bottles$')), server('/present/bottles'))
     }
     response {
         status 200
