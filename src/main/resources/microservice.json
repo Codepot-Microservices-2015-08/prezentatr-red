@@ -1,6 +1,6 @@
 {
     "red": {
-        "this": "pl/codepot/prezentatr",
+        "this": "foo/bar",
         "dependencies": {
         }
     }
