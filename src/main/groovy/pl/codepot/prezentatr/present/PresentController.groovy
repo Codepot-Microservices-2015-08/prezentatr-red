@@ -1,11 +1,14 @@
 package pl.codepot.prezentatr.present
+
 import groovy.util.logging.Slf4j
 import org.springframework.beans.factory.annotation.Autowired
+
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RequestMethod
 import org.springframework.web.bind.annotation.RestController
+import pl.codepot.prezentatr.ProcessService
 import pl.codepot.prezentatr.dto.IngredientTypes
 import pl.codepot.prezentatr.dto.Order
 import pl.codepot.prezentatr.service.IngredientService
@@ -16,10 +19,12 @@ import pl.codepot.prezentatr.service.IngredientService
 class PresentController {
 
     private final IngredientService ingredientService;
+    private final ProcessService processService
 
     @Autowired
-    PresentController(IngredientService ingredientService) {
+    PresentController(IngredientService ingredientService, ProcessService processService) {
         this.ingredientService = ingredientService;
+        this.processService = processService
     }
 
     @RequestMapping(value="/order", method = RequestMethod.POST)
@@ -32,16 +37,16 @@ class PresentController {
 
     @RequestMapping(value="/bottles", method = RequestMethod.GET)
     String presentBottles() {
-        return "0"
+        return processService.getButelkiCount()
     }
     @RequestMapping(value="/butelkatr", method=RequestMethod.GET)
     String presentButelkatr() {
-        return "0"
+        return processService.getButelkowanieCount()
     }
 
     @RequestMapping(value="/dojrzewatr", method=RequestMethod.GET)
     String presentDojrzewatr() {
-        return "0"
+        return processService.getDojrzewatrCount()
     }
 
 }
