@@ -2,6 +2,9 @@
     "red": {
         "this": "pl/codepot/prezentatr-red",
         "dependencies": {
+            "aggregatr-red": {
+                "path": "pl/codepot/aggregatr-red"
+            }
 
         }
     }
