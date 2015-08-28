@@ -1,5 +1,7 @@
 package pl.codepot.prezentatr.present
 import com.jayway.restassured.module.mockmvc.RestAssuredMockMvc
+import pl.codepot.prezentatr.dto.Order
+import pl.codepot.prezentatr.service.IngredientService
 import pl.codepot.prezentatr.dto.Ingredient
 import pl.codepot.prezentatr.dto.IngredientType
 import pl.codepot.prezentatr.dto.Order
