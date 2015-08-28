@@ -27,12 +27,18 @@ class PresentController {
         return new ResponseEntity<Order>(order, HttpStatus.OK);
     }
 
-    @RequestMapping(value="/bottles", method = RequestMethod.PUT)
-    bottles() {
-        return HttpStatus.OK;
+    @RequestMapping(value="/bottles", method = RequestMethod.GET)
+    String presentBottles() {
+        return "0"
+    }
+    @RequestMapping(value="/butelkatr", method=RequestMethod.GET)
+    String presentButelkatr() {
+        return "0"
     }
 
-
-
+    @RequestMapping(value="/dojrzewatr", method=RequestMethod.GET)
+    String presentDojrzewatr() {
+        return "0"
+    }
 
 }
