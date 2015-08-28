@@ -1,5 +1,6 @@
 package pl.codepot.prezentatr.present
 
+import org.springframework.http.HttpEntity
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.RequestMapping
@@ -15,7 +16,7 @@ import pl.codepot.prezentatr.dto.Order
 class PresentController {
 
     @RequestMapping(value="/order", method = RequestMethod.POST)
-    ResponseEntity<Order> order() {
+    ResponseEntity<Order> order(HttpEntity<String> body) {
         Order order = new Order()
         List<Ingredient> ingredients = Arrays.asList(
                 new Ingredient(IngredientType.MALT, 200),
@@ -24,7 +25,7 @@ class PresentController {
                 new Ingredient(IngredientType.YIEST, 200),
         );
         order.setIngredients(ingredients)
-        return new ResponseEntity<Order>(order, HttpStatus.OK);
+        return new ResponseEntity<Order>(order, HttpStatus.OK)
     }
 
     @RequestMapping(value="/bottles", method = RequestMethod.GET)

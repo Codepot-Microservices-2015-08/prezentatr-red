@@ -8,20 +8,20 @@ import org.springframework.web.bind.annotation.RestController
 
 @RestController
 @RequestMapping(value = "/feed", consumes = "application/vnd.pl.codepot.prezentatr.v1+json", produces = MediaType.APPLICATION_JSON_VALUE)
-public class FeedController {
+class FeedController {
 
     @RequestMapping(value = '/butelkatr', method = RequestMethod.PUT)
-    public HttpStatus butelkatr() {
-        return HttpStatus.OK;
+    HttpStatus butelkatr() {
+        return HttpStatus.OK
     }
 
     @RequestMapping(value = '/dojrzewatr', method = RequestMethod.PUT)
-    public HttpStatus dojrzewatr() {
-        return HttpStatus.OK;
+    HttpStatus dojrzewatr() {
+        return HttpStatus.OK
     }
 
     @RequestMapping(value = '/bottles/34', method = RequestMethod.PUT)
-    public HttpStatus bottle() {
-        return HttpStatus.OK;
+    HttpStatus bottle() {
+        return HttpStatus.OK
     }
 }
