@@ -1,5 +1,6 @@
 package pl.codepot.prezentatr.present
 
+import groovy.util.logging.Slf4j
 import org.springframework.http.HttpEntity
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
@@ -13,10 +14,12 @@ import pl.codepot.prezentatr.dto.Order
 
 @RestController
 @RequestMapping('/present')
+@Slf4j
 class PresentController {
 
     @RequestMapping(value="/order", method = RequestMethod.POST)
     ResponseEntity<Order> order(HttpEntity<String> body) {
+        log.info "order method called"
         Order order = new Order()
         List<Ingredient> ingredients = Arrays.asList(
                 new Ingredient(IngredientType.MALT, 200),
